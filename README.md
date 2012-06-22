@@ -24,7 +24,7 @@ Author
 
 **Ricardo Fritsche**
 
-+ http://twitter.com/ricardovf
++ https://github.com/ricardovf
 
 
 
