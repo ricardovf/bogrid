@@ -13,6 +13,11 @@ Then use `Command+G` or `CTRL+G` to show the grid.
 
 > Only tested on Google Chrome.
 
+Screenshot
+-------
+
+![bogrid](https://raw.github.com/ricardovf/bogrid/master/bogrid.jpg "bogrid")
+
 Favorite Mode
 -------
 
