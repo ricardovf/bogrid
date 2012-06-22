@@ -1,11 +1,3 @@
-bogrid
-======
-
-Simple grid overlay for Twitter Bootstrap.
-
-Feel free to fork and change stuff.
-
-
 [bogrid](http://twitter.github.com/bogrid)
 =================
 
@@ -13,11 +5,20 @@ Simple grid overlay for Twitter [Bootstrap](https://github.com/twitter/bootstrap
 
 To use it just include the code when in development environment:
 
-````
-<script type="text/javascript" src="http://provabrasil.ricardo:8080/gimme/ae68493d75/js/bogrid/bogrid.js"></script>
-````
+`````javascript
+<script type="text/javascript" src="https://raw.github.com/ricardovf/bogrid/master/bogrid.js"></script>
+`````
 
 Then use `Command+G` or `CTRL+G` to control the grid.
+
+Favorite Mode
+-------
+
+If you wanna test it, just add <a href="javascript: var bogridinject = document.createElement('script'); bogridinject.src='https://raw.github.com/ricardovf/bogrid/master/bogrid.js'; document.body.appendChild(bogridinject)">bogrid</a> to your favorite bar and then just hit it in any bootstrap site.
+
+`````javascript
+var bogridinject = document.createElement('script'); bogridinject.src='https://raw.github.com/ricardovf/bogrid/master/bogrid.js'; document.body.appendChild(bogridinject)
+`````
 
 Author
 -------
