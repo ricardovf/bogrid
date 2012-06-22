@@ -29,19 +29,16 @@
 
     this.options = $.extend({}, $.fn.bogrid.defaults, options)
 
-    this.visible = this.options.visible;
-
-    this.$el = $('<div id="bugrid" style="position: fixed; z-index: 9999999; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>').hide()
+    this.$el = $('<div id="bogrid" style="position: fixed; z-index: 9999999; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; overflow: hidden; display: none"></div>')
 
     $(document.body).append(this.$el)
 
     this.render()
 
-    if (this.options.store && localStorage && localStorage.getItem('Bogrid:visibility') === 'false') {
-      this.hide()
-    } else if (this.visible) {
-      this.$el.show()
+    if (this.options.store && localStorage && localStorage.getItem('Bogrid:visibility') === 'true') {
       this.show()
+    } else {
+      this.hide()
     }
 
     $(document.body).on('keydown.bogrid', function(event){
@@ -65,23 +62,23 @@
     }
 
     , show: function () {
-      this.$el.fadeIn(250)
+      this.$el.fadeIn(1000)
 
       this.visible = true;
 
       // store
-      this.options.store && localStorage && localStorage.setItem('Bogrid:visibility', this.visible)
+      this.options.store && localStorage && localStorage.setItem('Bogrid:visibility', 'true')
 
       return this
     }
 
     , hide: function () {
-      this.$el.fadeOut(250)
+      this.$el.fadeOut(1000)
 
       this.visible = false;
 
       // store
-      this.options.store && localStorage && localStorage.setItem('Bogrid:visibility', this.visible)
+      this.options.store && localStorage && localStorage.setItem('Bogrid:visibility', 'false')
 
       return this
     }
@@ -118,16 +115,20 @@
 
       var $row = this.$el.find('> div > div');
 
-      for (var i = 0; i < this.columns; i++) {
-        $('<div class="span1" style="background: red; height: 2500px"></div>').css('opacity', 0.05).appendTo($row);
+      if (this.options.show_columns) {
+        for (var i = 0; i < this.columns; i++) {
+          $('<div class="span1" style="background: red; height: 2500px"></div>').css('opacity', 0.05).appendTo($row);
+        }
       }
 
-      var line_height = parseInt($row.find('.span1:first-child').css('line-height'), 10)
-        , top = line_height
+      if (this.options.show_rows) {
+        var line_height = parseInt($row.css('line-height'), 10)
+          , top = line_height
 
-      for (var i = 0; i < 100; i++) {
-        $('<div style="background: red; height: 1px; position: absolute; width: 100%; top: '+top+'px"></div>').css('opacity', 0.1).appendTo(this.$el);
-        top += line_height
+        for (var i = 0; i < 100; i++) {
+          $('<div style="background: red; height: 1px; position: absolute; width: 100%; top: '+top+'px"></div>').css('opacity', 0.1).appendTo(this.$el);
+          top += line_height
+        }
       }
       
       return this
@@ -137,7 +138,7 @@
   var bogrid_static = null;
 
 
-  /* HUGRID PLUGIN DEFINITION
+  /* bogrid PLUGIN DEFINITION
    * ===================== */
 
   $.fn.bogrid = function (options) {
@@ -152,17 +153,15 @@
 
   // Bogrid default
   $.fn.bogrid.defaults = {
-     visible           : true     // start visible?
-    ,show_rows         : true
+     show_rows         : true
     ,show_columns      : true
     ,store             : true     // store visibility in localStorage
   }
 
   $.fn.bogrid.Constructor = Bogrid
-
+  
   $(function(){
     $(document.body).bogrid()
   })
-
 }(window.jQuery);
 

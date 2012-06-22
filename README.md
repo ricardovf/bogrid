@@ -16,10 +16,12 @@ Then use `Command+G` or `CTRL+G` to show the grid.
 Favorite Mode
 -------
 
-If you wanna test it, just add <a href="javascript: var bogridinject = document.createElement('script'); bogridinject.src='https://raw.github.com/ricardovf/bogrid/master/bogrid.js'; document.body.appendChild(bogridinject)">bogrid</a> to your favorite bar and then just hit it in any bootstrap site.
+If you wanna test it, just add [bogrid](http://twitter.github.com/bogrid) to your favorite bar, edit it with the code below and then just use it in any bootstrap site and type `Command+G` or `CTRL+G` to show the grid.
 
 `````javascript
-var bogridinject = document.createElement('script'); bogridinject.src='https://raw.github.com/ricardovf/bogrid/master/bogrid.js'; document.body.appendChild(bogridinject)
+var bogridinject = document.createElement('script');
+bogridinject.src='https://raw.github.com/ricardovf/bogrid/master/bogrid.js';
+document.body.appendChild(bogridinject);
 `````
 
 Author
