@@ -9,7 +9,9 @@ To use it just include the code when in development environment:
 <script type="text/javascript" src="https://raw.github.com/ricardovf/bogrid/master/bogrid.js"></script>
 `````
 
-Then use `Command+G` or `CTRL+G` to control the grid.
+Then use `Command+G` or `CTRL+G` to show the grid.
+
+> Only tested on Google Chrome.
 
 Favorite Mode
 -------

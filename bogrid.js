@@ -61,7 +61,7 @@
     , setOptions: function (options) {
       this.options = $.extend({}, $.fn.bogrid.defaults, options)
 
-      this.render()
+      return this.render()
     }
 
     , show: function () {
@@ -129,6 +129,8 @@
         $('<div style="background: red; height: 1px; position: absolute; width: 100%; top: '+top+'px"></div>').css('opacity', 0.1).appendTo(this.$el);
         top += line_height
       }
+      
+      return this
     }
   }
 
