@@ -62,7 +62,7 @@
     }
 
     , show: function () {
-      this.$el.fadeIn(1000)
+      this.$el.fadeIn(250)
 
       this.visible = true;
 
@@ -73,7 +73,7 @@
     }
 
     , hide: function () {
-      this.$el.fadeOut(1000)
+      this.$el.fadeOut(250)
 
       this.visible = false;
 
