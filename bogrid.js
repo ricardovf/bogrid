@@ -24,6 +24,19 @@
 
   "use strict"; // jshint ;_;
 
+  // Feature detect + local reference to localStorage
+  var storage = (function() {
+    var uid = new Date,
+      storage,
+      result;
+    try {
+      (storage = window.localStorage).setItem(uid, uid);
+      result = storage.getItem(uid) == uid;
+      storage.removeItem(uid);
+      return result && storage;
+    } catch(e) {}
+  }());
+
   var Bogrid = function ( options ) {
     var $this = this
 
@@ -35,7 +48,7 @@
 
     this.render()
 
-    if (this.options.store && localStorage && localStorage.getItem('Bogrid:visibility') === 'true') {
+    if (this.options.store && storage && storage.getItem('Bogrid:visibility') === 'true') {
       this.show()
     } else {
       this.hide()
@@ -67,7 +80,7 @@
       this.visible = true;
 
       // store
-      this.options.store && localStorage && localStorage.setItem('Bogrid:visibility', 'true')
+      this.options.store && storage && storage.setItem('Bogrid:visibility', 'true')
 
       return this
     }
@@ -78,7 +91,7 @@
       this.visible = false;
 
       // store
-      this.options.store && localStorage && localStorage.setItem('Bogrid:visibility', 'false')
+      this.options.store && storage && storage.setItem('Bogrid:visibility', 'false')
 
       return this
     }
@@ -136,7 +149,6 @@
   }
 
   var bogrid_static = null;
-
 
   /* bogrid PLUGIN DEFINITION
    * ===================== */
