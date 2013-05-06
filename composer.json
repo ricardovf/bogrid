@@ -1,0 +1,8 @@
+{
+    "name": "ricardovf/bogrid.js"
+  , "description": "Simple grid overlay for Twitter Bootstrap."
+  , "keywords": ["bootstrap", "css", "bogrid"]
+  , "homepage": "https://github.com/ricardovf/bogrid"
+  , "author": "Ricardo Fritsche"
+  , "license": "Apache-2.0"
+}
