@@ -6,7 +6,7 @@ Simple grid overlay for Twitter [Bootstrap](https://github.com/twitter/bootstrap
 To use it just include the code when in development environment:
 
 `````javascript
-<script type="text/javascript" src="https://raw.github.com/ricardovf/bogrid/master/bogrid.js"></script>
+<script type="text/javascript" src="https://rawgithub.com/ricardovf/bogrid/master/bogrid.js"></script>
 `````
 
 Then use `Command+G` or `CTRL+G` to show the grid.
@@ -21,11 +21,11 @@ Screenshot
 Favorite Mode
 -------
 
-If you wanna test it, just add [bogrid](http://twitter.github.com/bogrid) to your favorite bar, edit it with the code below and then just use it in any bootstrap site and type `Command+G` or `CTRL+G` to show the grid.
+If you wanna test it, just add [bogrid](https://github.com/ricardovf/bogrid/) to your favorite bar, edit it with the code below and then just use it in any bootstrap site and type `Command+G` or `CTRL+G` to show the grid.
 
 `````javascript
 var bogridinject = document.createElement('script');
-bogridinject.src='https://raw.github.com/ricardovf/bogrid/master/bogrid.js';
+bogridinject.src='https://rawgithub.com/ricardovf/bogrid/master/bogrid.js';
 document.body.appendChild(bogridinject);
 `````
 
